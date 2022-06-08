@@ -1,15 +1,20 @@
 #include "main.h"
 /**
-* main - calls function "print_alphabet"
-* @void: no args passed
+* print_alphabet - prints entire alphabet from A to Z in lowercase
+* @void: no args
 *
 *
-*Return: the function will return error code "0"
+*Return: no return, void type function
 *
 *
 */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	char i;
+
+	for (i = 'a'; i <= 'z'; i++)
+	{
+		_putchar(i);
+	}
+	_putchar('\n');
 }
