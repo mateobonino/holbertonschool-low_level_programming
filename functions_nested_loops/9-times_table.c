@@ -10,11 +10,36 @@
 */
 void times_table(void)
 {
-	int times;
+	int times, num, mult;
 
-	for (times = 0; times <= 9; times++)
+	for (times = 0; times < 10; times++)
 	{
-		_putcha
-		_putcharr
+		for (num = 0; num < 10; num++)
+		{
+			mult = num * times;
+			if (mult >= 10)
+			{
+				_putchar((mult / 10) + 48);
+				_putchar((mult % 10) + 48);
+			} else
+			{
+				_putchar(mult + 48);
+			}
+			if (num == 9)
+			{
+				continue;
+			}
+			if (times * (num + 1) < 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+			} else
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+		}
+		_putchar('\n');
 	}
 }
