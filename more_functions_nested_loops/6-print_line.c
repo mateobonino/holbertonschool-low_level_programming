@@ -11,7 +11,7 @@ void print_line(int n)
 {
 	int times;
 
-	for (times = 0; times <= n; times++)
+	for (times = 1; times <= n; times++)
 	{
 		if (n <= 0)
 		{
