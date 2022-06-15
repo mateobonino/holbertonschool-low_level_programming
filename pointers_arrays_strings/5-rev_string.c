@@ -1,48 +1,26 @@
 #include "main.h"
-/*
- *
- *
- *
- *
- *
- *
- *
- */
-void _strle(char *s)
-{
-	int i;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-}
-
+/**
+* rev_string - reverses a string using pointers
+* @s: the string to reverse
+*
+*Return: no return, void type function
+*
+*
+*/
 void rev_string(char *s)
 {
-	int j, len;
-	char *str_beg; *str_end, ch;
+	int len, i, temp;
 
-	len = _strle(*s);
-	
-	*str_beg = s;
-	*str_end = s;
-
-	for (j = 0; j < len; j++)
+	len = 0;
+	while (s[len] != '\0')
 	{
-		str_end++;
+		len++;
 	}
 
-	for (j = 0; j = len /2; j++)
+	for (i = 0; i <= len / 2; i++)
 	{
-		ch = *str_end;
-		*str_end = *str_beg;
-		*str_beg = ch;
-
-		str_beg++;
-		str_end--;
+		temp = s[i];
+		s[i] = s[len - i - 1];
+		s[len - i - 1] = temp;
 	}
-
-
-
 }
