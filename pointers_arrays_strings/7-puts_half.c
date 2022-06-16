@@ -1,5 +1,12 @@
 #include "main.h"
-
+/**
+* _strl - gets the length of a given string
+* @s: the string
+*
+* Return: returns the length
+*
+*
+*/
 int _strl(char *s)
 {
 	int len;
@@ -11,7 +18,14 @@ int _strl(char *s)
 	}
 	return (len);
 }
-
+/**
+* puts_half - prints the half of a string
+* @str: the string
+*
+*Return: no return, void type function
+*
+*
+*/
 void puts_half(char *str)
 {
 	int n;
@@ -22,7 +36,7 @@ void puts_half(char *str)
 		n = le / 2;
 	} else
 	{
-		n = (le - 1) / 2;
+		n = (le + 1) / 2;
 	}
 
 	while (str[n] != '\0')
