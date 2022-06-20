@@ -2,7 +2,7 @@
 /**
 * _pow_recursion - returns the value of x raised to the power of y
 * @x: 1st arg
-* @y; 2nd arg
+* @y: 2nd arg
 *Return: value of x raised to the power of y
 *
 *
