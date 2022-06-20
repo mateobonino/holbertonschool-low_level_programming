@@ -1,11 +1,8 @@
 #include "main.h"
 /**
-* _puts_recursion - prints a string with recursion
-* @s: the string to print
-*
-*Return: no return, void type function
-*
-*
+* _sqrt_recursion - returns the natural sqrt of a number
+* @n: the number
+*Return: returns the sqrt of n
 */
 int _sqrt_recursion(int n)
 {
@@ -21,6 +18,12 @@ int _sqrt_recursion(int n)
 		return (sqrt_check(n, 0));
 	}
 }
+/**
+* sqrt_check - checks if i is the sqrt of n
+* @n: the number
+* @i: the sqrt to check
+*Return: returns i if is the sqrt of n
+*/
 int sqrt_check(int n, int i)
 {
 	if (i * i > n)
