@@ -11,21 +11,20 @@
 int main(int argc, char *argv[])
 {
 	int i, res;
-	char *k;
 	unsigned int j, arlen;
 
-	res = 0;	
+	res = 0;
+
 	for (i = 1; i < argc; i++)
 	{
-		k = argv[i];
-		arlen = strlen(k);
+		arlen = strlen(argv[i]);
 		for (j = 0; j < arlen; j++)
 		{
-			if (isdigit(*(k + j)) == 0)
+			if (isdigit(*(argv[i] + j)) == 0)
 			{
 				printf("Error\n");
+				return (1);
 			}
-			return (1);
 		}
 		res = res + atoi(argv[i]);
 	}
