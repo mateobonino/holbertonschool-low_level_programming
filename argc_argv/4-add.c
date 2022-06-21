@@ -1,38 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 /**
-* main - adds to numbers passed by command line args
+* main - adds two numbers passed by command line
 * @argc: size of argv array
 * @argv: contains the args passed
 *Return: 1 if invalid digits, 0 if succesful
 */
 int main(int argc, char *argv[])
 {
-	int i, j, numcheck;
-	unsigned int res, num;
-	i = 1;
-	while (argc != '\0')
+	int i, res;
+	char *k;
+	unsigned int j, arlen;
+
+	res = 0;	
+	for (i = 1; i < argc; i++)
 	{
-		printf("check for null char\n");
-		numcheck = *argv[i];
-		printf("defined numcheck var\n");
-		if (argc >= 2 && isdigit(num))
+		k = argv[i];
+		arlen = strlen(k);
+		for (j = 0; j < arlen; j++)
 		{
-			printf("if condition passed succesfully\n");
-			num = atoi(argv[j]);
-			for (j = 1; j < argc; j++)
+			if (isdigit(*(k + j)) == 0)
 			{
-				printf("adde2 numbers correctly\n");
-				res = res + num;
+				printf("Error\n");
 			}
-			i++;
+			return (1);
 		}
-		else
-		{
-			printf("Error\n");
-			return (0);
-		}
+		res = res + atoi(argv[i]);
 	}
 	printf("%i\n", res);
 	return (0);
