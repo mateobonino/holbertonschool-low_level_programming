@@ -14,6 +14,7 @@ char *_strdup(char *str)
 
 	for (size = 0; str[size] != '\0'; size++)
 	{
+		;
 	}
 
 	if (str == NULL)
@@ -29,6 +30,6 @@ char *_strdup(char *str)
 	{
 		p[j] = str[j];
 	}
-	p[j] = '\0'; 
+	p[j] = '\0';
 	return (p);
 }
