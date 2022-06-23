@@ -12,7 +12,14 @@ char *str_concat(char *s1, char *s2)
 	long int i, j, s1len, s2len;
 	char *a;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL && s2 != NULL)
+	{
+		s1 = "";
+	} else if (s1 != NULL && s2 == NULL)
+	{
+		s2 = "";
+	}
+	else
 	{
 		return (NULL);
 	}
