@@ -19,9 +19,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
+		n = size2;
 
 	size1 = charlen(s1);
-	if (n >= (unsigned int) charlen(s2))
+	if (n >= (unsigned int) size2
 	{
 		size2 = charlen(s2);
 		p = malloc(size1 + size2 + 6);
