@@ -1,0 +1,60 @@
+#include "main.h"
+#include <stdlib.h>
+/**
+* *string_nconcat - concatenates two strings
+* @s1: first string
+* @s2: second string
+* @n: number of bytes to print from s2
+*Return: returns the concatenated string
+*
+*/
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+{
+	int a, b, size1, size2;
+	char *p;
+
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	size1 = charlen(s1);
+	if (n >= charlen(s2))
+		size2 = charlen(s2);
+	else
+		size2 = n;
+
+	p = malloc(size 1 + size2 + 1);
+
+	if (p == NULL)
+		return (NULL);
+
+	for (a = 0; a < size1; a++)
+		p[a] = s1[a];
+
+	for (b = 0; b < size2; b++)
+		p[a] = s2[b];
+		a++;
+
+	p[a] = '\0';
+	return (a);
+
+
+}
+
+/**
+* *charlen - gets the length of a string
+* @s: the string
+*Return: returns the length of the string
+*
+*/
+int charlen(char *s);
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		;
+	}
+	return (i);
+}
