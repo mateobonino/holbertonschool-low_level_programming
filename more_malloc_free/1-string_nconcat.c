@@ -28,8 +28,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 	{
-		p = malloc(size1 + n + 6);
 		size2 = n;
+		p = malloc(size1 + size2  + 6);
 	}
 	if (p == NULL)
 		return (NULL);
