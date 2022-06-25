@@ -21,7 +21,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	size1 = charlen(s1);
-	if (n >= charlen(s2))
+	if (n >= (unsigned int) charlen(s2))
 	{
 		p = malloc(size1 + size2 + 6);
 		size2 = charlen(s2);
