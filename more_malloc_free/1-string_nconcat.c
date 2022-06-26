@@ -21,12 +21,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (n >= size2)
 	{
-		p = malloc(size1 + size2 + 5);
+		p = malloc(size1 + size2 + 6);
 	}
 	else
 	{
 		size2 = n;
-		p = malloc(size1 + size2  + 5);
+		p = malloc(size1 + size2  + 6);
 	}
 	if (p == NULL)
 		return (NULL);
