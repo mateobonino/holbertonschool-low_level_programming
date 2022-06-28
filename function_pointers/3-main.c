@@ -17,19 +17,19 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(1);
+		exit(97);
 	}
 	/*printf("argc = 4\n");*/
 	if (get_op_func(argv[2]) == NULL)
 	{
 		printf("Error\n");
-		exit(1);
+		exit(98);
 	}
 	/*printf("argv[2] != NULL\n");*/
 	if (((*argv[2]) == '/' || (*argv[2]) == '%') && atoi(argv[3]) == 0)
 	{
 		printf("Error\n");
-		exit(1);
+		exit(99);
 	}
 	/*printf("argv[1] and argv[3] are digits\n");*/
 	res = (get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
