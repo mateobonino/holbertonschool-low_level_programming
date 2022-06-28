@@ -1,5 +1,6 @@
-#include "function_pointers.h"
+#include "3-calc.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
 /**
@@ -9,23 +10,29 @@
 *Return: 0
 *
 */
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
-	int n1, n2, res;
-	char *a = argv[2];
-	if (argc == 4)
+	int res;
+
+	if (argc != 4)
 	{
-		res = 0;
-		n1 = atoi(argv[1]);
-		n2 = atoi(argv[3]);
-		if (isdigit(argv[1]) && isdigit(argv[3]) != 0)
-		{
-			res += (*get_op(char *s))(int n1, n2);
-		;}
 		printf("Error\n");
+		exit (1);
 	}
-	else
+	printf("argc = 4\n");
+	if ((get_op_func)(argv[2]) == NULL)
+	{
 		printf("Error\n");
+		exit (1);
+	}
+	printf("argv[2] != NULL\n");
+	if (!(atoi(argv[1]) >= 0 && atoi(argv[3]) <= 9))
+	{
+		printf("Error\n");
+		exit (1);
+	}
+	printf("argv[1] and argv[3] are digits\n");
+	res = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
 	printf("%d\n", res);
 	return (0);
 }
