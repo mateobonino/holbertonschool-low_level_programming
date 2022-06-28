@@ -4,14 +4,14 @@
 *int_index - searches for an integer
 * @array: the array
 * @size: the array size
-* @(*cmp): the pointer
+* @cmp: the pointer
 *Return: a int
 *
 */
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
-	
+
 	if ((*cmp) == NULL)
 	{
 		return (-1);
