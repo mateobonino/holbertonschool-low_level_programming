@@ -22,7 +22,7 @@ int (*get_op_func(char *s))(int, int)
 	while (ops[i].op)
 	{
 		/*printf("ops[i.op] exits\n");*/
-		if (s[0] == ops[i].op[0] && ops[i].op[0] != '\0')
+		if (s[0] == ops[i].op[0] && (*ops[i].op) != '\0')
 		{
 			/*printf("s = op[0] and ops[i] != NULL\n");*/
 			return (ops[i].f);

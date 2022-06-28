@@ -20,19 +20,19 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 	/*printf("argc = 4\n");*/
-	if ((get_op_func)(argv[2]) == NULL)
+	if (get_op_func(argv[2]) == NULL)
 	{
 		printf("Error\n");
 		exit(1);
 	}
 	/*printf("argv[2] != NULL\n");*/
-	if (!(atoi(argv[1]) >= 0 && atoi(argv[3]) <= 9))
+	if (((*argv[2]) == '/' || (*argv[2]) == '%') && atoi(argv[3]) == 0)
 	{
 		printf("Error\n");
 		exit(1);
 	}
 	/*printf("argv[1] and argv[3] are digits\n");*/
-	res = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
+	res = (get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
 	printf("%d\n", res);
 	return (0);
 }
