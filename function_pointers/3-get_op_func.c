@@ -1,6 +1,10 @@
 #include "3-calc.h"
 #include <stdio.h>
-
+/**
+* *get_op_func - recognises the operator sent by the user
+* @s: the operator
+*Return: the operator
+*/
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -15,7 +19,7 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 
 	i = 0;
-	while(ops[i].op)
+	while (ops[i].op)
 	{
 		printf("ops[i.op] exits\n");
 		if (s[0] == ops[i].op[0] && ops[i].op[0] != '\0')
