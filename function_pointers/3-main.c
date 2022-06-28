@@ -20,13 +20,13 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	/*printf("argc = 4\n");*/
-	if (get_op_func(argv[2]) == NULL)
+	if (get_op_func(argv[2]) == NULL && strlen(argv[2]) > 1)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 	/*printf("argv[2] != NULL\n");*/
-	if (((*argv[2]) == '/' || (*argv[2]) == '%') && (atoi(argv[3]) == 0 && strlen(argv[2]) > 1))
+	if (((*argv[2]) == '/' || (*argv[2]) == '%') && atoi(argv[3]) == 0)
 	{
 		printf("Error\n");
 		exit(100);
