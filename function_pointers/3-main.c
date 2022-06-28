@@ -17,21 +17,21 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit (1);
+		exit(1);
 	}
-	printf("argc = 4\n");
+	/*printf("argc = 4\n");*/
 	if ((get_op_func)(argv[2]) == NULL)
 	{
 		printf("Error\n");
-		exit (1);
+		exit(1);
 	}
-	printf("argv[2] != NULL\n");
+	/*printf("argv[2] != NULL\n");*/
 	if (!(atoi(argv[1]) >= 0 && atoi(argv[3]) <= 9))
 	{
 		printf("Error\n");
-		exit (1);
+		exit(1);
 	}
-	printf("argv[1] and argv[3] are digits\n");
+	/*printf("argv[1] and argv[3] are digits\n");*/
 	res = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
 	printf("%d\n", res);
 	return (0);
