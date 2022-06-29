@@ -6,7 +6,7 @@
 *
 *
 */
-void natural_numbers(void)
+int natural_numbers(void)
 {
 	int i, res;
 
@@ -20,5 +20,5 @@ void natural_numbers(void)
 			res += i;
 		}
 	}
-	printf("%d\n", res);
+	return (res);
 }

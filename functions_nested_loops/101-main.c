@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
 *
 *
@@ -7,6 +8,9 @@
 */
 int main(void)
 {
-	natural_numbers();
+	int res;
+
+	res = natural_numbers();
+	printf("%d\n", res);
 	return (0);
 }
