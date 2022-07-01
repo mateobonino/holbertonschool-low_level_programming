@@ -42,7 +42,7 @@ void print_all(const char * const format, ...)
 		}
 		if ((format[i] == 'f' || format[i] == 'i' ||
 			format[i] == 's' || format[i] == 'c') && format[i + 1] != '\0')
-			printf(",");
+			printf(", ");
 		i++;
 	}
 	printf("\n");
