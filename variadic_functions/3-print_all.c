@@ -9,7 +9,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int i = 0;
 	int in;
-	char *s; /*variable "isnull" because i dont have enough lines to make a bigger if condition on case 's'*/
+	char *s;
 	va_list prmt;
 
 	va_start(prmt, format);
@@ -22,9 +22,6 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				s = va_arg(prmt, char *);
-				/*if (s == NULL)
-					s = isnull;
-				printf("%s", s);*/
 				print_str(s);
 				break;
 			case 'i':
@@ -47,6 +44,11 @@ void print_all(const char * const format, ...)
  	va_end(prmt);
 }
 
+/**
+* print_str - prints the given string
+* @s: the string
+*Return: void functions
+*/
 void print_str(char *s)
 {
 	char *isnull = "(nil)";
