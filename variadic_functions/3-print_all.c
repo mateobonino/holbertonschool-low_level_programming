@@ -9,7 +9,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int i = 0;
 	int in;
-	char *s, *isnull = "(nil)"; /*variable "isnull" because i dont have enough lines to make a bigger if condition on case 's'*/
+	char *s; /*variable "isnull" because i dont have enough lines to make a bigger if condition on case 's'*/
 	va_list prmt;
 
 	va_start(prmt, format);
@@ -54,11 +54,10 @@ void print_char(char a)
 
 void print_str(char *s)
 {
-	int len = strlen(s);
 	char *isnull = "(nil)";
 
 	if (s == NULL)
-		s == isnull;
+		s = isnull;
 	while (*s != '\0')
 		putchar(*s++);
 
