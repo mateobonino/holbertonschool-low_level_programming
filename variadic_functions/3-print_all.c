@@ -8,7 +8,7 @@
 void print_all(const char * const format, ...)
 {
 	unsigned int i = 0;
-	int state = 0, in;
+	int in;
 	char ch, *s;
 	float flo;
 	va_list prmt;
