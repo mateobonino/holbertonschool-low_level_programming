@@ -7,6 +7,7 @@
 */
 int sum_them_all(const unsigned int n, ...)
 {
+	unsigned int i;
 	int res = 0;
 
 	va_list prmt;
@@ -17,9 +18,11 @@ int sum_them_all(const unsigned int n, ...)
 	}
 	va_start(prmt, n);
 
-	for (unsigned int i = 0; i < n; i++)
+	i = 0;
+	while (i < n)
 	{
 		res += va_arg(prmt, int);
+		i++;
 	}
 	return (res);
 }
