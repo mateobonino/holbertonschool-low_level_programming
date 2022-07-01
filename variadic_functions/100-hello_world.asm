@@ -1,18 +1,19 @@
-section .data
-	msg: DB 'Hello, World', 10
-	msgSize: EQU $ - msg
+global main
 
-section .text
-	global main
+section .text:
 
 main:
-	mov rcx, msg
-	mov rdx, msgSize
-	mov rdi, 1
-	mov eax, 4
+	mov eax, 0x4
+	mov ebx, 1
+	mov ecx, message
+	mov edx, msg_length
 	int 0x80
 
-	mov eax, 1
-	mov rdi, 0
+	mov eax, 0x1
+	mov ebx, 0
 	int 0x80
-	ret
+
+section .data:
+
+	message: db "Hello, World", 0xA
+	msg_length: equ $ - message
