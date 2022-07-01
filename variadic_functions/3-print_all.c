@@ -18,7 +18,7 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c': /*case 'c' print a character*/
-				print_char(va_arg(prmt, int));
+				putchar(va_arg(prmt, int));
 				break;
 			case 's':
 				s = va_arg(prmt, char *);
@@ -45,11 +45,6 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n");
  	va_end(prmt);
-}
-
-void print_char(char a)
-{
-	write(1, &a, 1);
 }
 
 void print_str(char *s)
