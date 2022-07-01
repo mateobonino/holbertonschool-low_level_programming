@@ -1,16 +1,18 @@
 section .data
-    msg db "Hello world!",10      ; 10 is the ASCII code for a new line (LF)
+	msg: DB 'Hello, World', 10
+	msgSize: EQU $ - msg
 
 section .text
-    global _start
+	global main
 
-_start:
-    mov rax, 1
-    mov rdi, 1
-    mov rsi, msg
-    mov rdx, 13
-    syscall
-    
-    mov rax, 60
-    mov rdi, 0
-    syscall
+main:
+	mov rcx, msg
+	mov rdx, msgSize
+	mov rdi, 1
+	mov eax, 4
+	int 0x80
+
+	mov eax, 1
+	mov rdi, 0
+	int 0x80
+	ret
