@@ -9,8 +9,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int i = 0;
 	int in;
-	char ch, *s;
-	float flo;
+	char *s, *isnull = "(nil)"; /*variable "isnull" because i dont have enough lines to make a bigger if condition on case 's'*/
 	va_list prmt;
 
 	va_start(prmt, format);
@@ -18,23 +17,22 @@ void print_all(const char * const format, ...)
 	{
 		switch (format[i])
 		{
-			case 'c':
-				ch = va_arg(prmt, int);
-				printf("%c", ch);
+			case 'c': /*case 'c' print a character*/
+				print_char(va_arg(prmt, int));
 				break;
 			case 's':
 				s = va_arg(prmt, char *);
-				if (s == NULL)
-					printf("(nil)");
-				printf("%s", s);
+				/*if (s == NULL)
+					s = isnull;
+				printf("%s", s);*/
+				print_str(s);
 				break;
 			case 'i':
 				in = va_arg(prmt, int);
 				printf("%d", in);
 				break;
 			case 'f':
-				flo = va_arg(prmt, double);
-				printf("%f", flo);
+				printf("%f", va_arg(prmt, double));
 				break;
 			default:
 				i++;
@@ -46,5 +44,22 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
-	va_end(prmt);
+ 	va_end(prmt);
+}
+
+void print_char(char a)
+{
+	write(1, &a, 1);
+}
+
+void print_str(char *s)
+{
+	int len = strlen(s);
+	char *isnull = "(nil)";
+
+	if (s == NULL)
+		s == isnull;
+	while (*s != '\0')
+		putchar(*s++);
+
 }
