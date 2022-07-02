@@ -6,9 +6,10 @@ RM = rm
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o holberton
 
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) *~ $(NAME) holberton
 
 oclean:
 	$(RM) $(OBJ)
