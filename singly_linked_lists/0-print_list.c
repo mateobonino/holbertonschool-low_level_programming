@@ -1,5 +1,9 @@
 #include "lists.h"
-
+/**
+* print_list - prints all the elements from a list
+* @h: the list
+*Return: the amount of elements
+*/
 size_t print_list(const list_t *h)
 {
 	int i, amount = 0;
