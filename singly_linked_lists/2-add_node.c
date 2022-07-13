@@ -10,7 +10,7 @@ list_t *add_node(list_t **head, const char *str)
 {
 	char *temp;
 	list_t *newnode;
-	int i = 0, count = 0;
+	int count = 0;
 
 	newnode = malloc(sizeof(list_t));
 	if (newnode == NULL)
@@ -22,6 +22,10 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		free(temp);
 		return (NULL);
+	}
+	while (str[count] != '\0')
+	{
+		count++;
 	}
 	newnode->str = temp;
 	newnode->next = *head;
