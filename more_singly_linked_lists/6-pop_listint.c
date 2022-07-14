@@ -7,13 +7,16 @@
 */
 int pop_listint(listint_t **head)
 {
+	listint_t ptrToFree;
 	int nodeData;
 
 	if (head == NULL)
 	{
 		return (0);
 	}
+	ptrToFree = *head;
 	nodeData = (*head)->n;
 	*head = (*head)->next;
+	free(ptrToFree);
 	return (nodeData);
 }
