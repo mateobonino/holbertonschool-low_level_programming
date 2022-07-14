@@ -8,11 +8,11 @@
 int pop_listint(listint_t **head)
 {
 	listint_t *ptrToFree;
-	int nodeData;
+	int nodeData = 0;
 
 	if (head == NULL)
 	{
-		return (0);
+		return (nodeData);
 	}
 	ptrToFree = *head;
 	nodeData = (*head)->n;
