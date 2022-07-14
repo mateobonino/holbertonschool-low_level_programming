@@ -7,7 +7,7 @@
 */
 int pop_listint(listint_t **head)
 {
-	listint_t ptrToFree;
+	listint_t *ptrToFree;
 	int nodeData;
 
 	if (head == NULL)
