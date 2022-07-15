@@ -20,6 +20,10 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		}
 		return (-1);
 	}
+	if (list_len(*head) <= 1)
+	{
+		return (-1);
+	}
 	while (i < index - 1)
 	{
 		if (temp == NULL && temp->next == NULL)
@@ -33,4 +37,20 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	temp->next = deletedNode->next;
 	free(deletedNode);
 	return (1);
+}
+/**
+* list_len - returns the length of a list
+* @h: the length
+*Return: the length
+*/
+size_t list_len(const listint_t *h)
+{
+	int len = 0;
+
+	while (h != NULL)
+	{
+		len++;
+		h = h->next;
+	}
+	return (len);
 }
