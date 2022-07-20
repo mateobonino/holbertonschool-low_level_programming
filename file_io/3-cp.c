@@ -55,8 +55,8 @@ void read_print(int from, int fto, /*char *buff, */char *file_f, char *file_t)
 
 	while (buffread == 1024)
 	{
-		read_val = read(from, buff, 1024);
-		if (read_val == -1)
+		buffread = read(from, buff, 1024);
+		if (buffread == -1)
 			normalError("Error: Can't read from file", file_f, 98);
 		write_val = write(fto, buff, read_val);
 		if (write_val == -1)
