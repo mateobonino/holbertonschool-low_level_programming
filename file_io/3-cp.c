@@ -61,7 +61,7 @@ void readFunc(char *file_from, char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", clous);
 		exit(100);
 	}
-	truncateFunc(file_from, file_to, buff);/*Truncate to file_from*/
+	truncateFunc(/*file_from, */file_to, buff);/*Truncate to file_from*/
 }
 
 void truncateFunc(/*char *f_from, */char *f_to, char *bf)
