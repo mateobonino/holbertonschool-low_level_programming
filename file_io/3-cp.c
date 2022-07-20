@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	f_from = open(file_from, O_RDONLY, 0600);
 	if (f_from == -1)
 		normalError("Error: Can't read from file", file_from, 98);
-	f_to = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0600);
+	f_to = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (f_to == -1)
 		normalError("Error: Can't write to", file_to, 99);
 	read_print(f_from, f_to, file_from, file_to);
