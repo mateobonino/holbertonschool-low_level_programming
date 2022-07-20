@@ -24,7 +24,9 @@ int main(int argc, char *argv[])
 	f_to = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (f_to == -1)
 		normalError("Error: Can't write to", file_to, 99);
+
 	read_print(f_from, f_to, file_from, file_to);
+
 	close1 = close(f_from);
 	if (close1 == -1)
 	{
@@ -48,15 +50,18 @@ int main(int argc, char *argv[])
 */
 void read_print(int from, int fto, /*char *buff, */char *file_f, char *file_t)
 {
-	int read_val = 0, write_val = 0;
+	int buffread = 1024, read_val = 0, write_val = 0;
 	char *buff[1024];
 
-	read_val = read(from, buff, 1024);
-	if (read_val == -1)
-		normalError("Error: Can't read from file", file_f, 98);
-	write_val = write(fto, buff, read_val);
-	if (write_val == -1)
-		normalError("Error: Can't write to", file_t, 99);
+	while (buffread == 1024)
+	{
+		read_val = read(from, buff, 1024);
+		if (read_val == -1)
+			normalError("Error: Can't read from file", file_f, 98);
+		write_val = write(fto, buff, read_val);
+		if (write_val == -1)
+			normalError("Error: Can't write to", file_t, 99);
+	}
 }
 /**
 * normalError - prints an error
