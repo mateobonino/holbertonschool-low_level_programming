@@ -14,7 +14,7 @@ int append_text_to_file(const char *filename, char *text_content);
 void readFunc(char *a, char *b);
 int checkFIle(char *a);
 /*void appendFUnc(char *a, char *b);*/
-void truncateFunc(char *a, char *b, char *c);
+void truncateFunc(/*char *a, */char *b, char *c);
 
 
 

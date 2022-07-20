@@ -2,7 +2,7 @@
 void readFunc(char *a, char *b);
 int checkFile(char *a);
 /*void appendFunc(char *a, char *b);*/
-void truncateFunc(char *a, char *b, char *c);
+void truncateFunc(/*char *a, */char *b, char *c);
 
 int main(int argc, char *argv[])
 {
@@ -64,10 +64,10 @@ void readFunc(char *file_from, char *file_to)
 	truncateFunc(file_from, file_to, buff);/*Truncate to file_from*/
 }
 
-void truncateFunc(char *f_from, char *f_to, char *bf)
+void truncateFunc(/*char *f_from, */char *f_to, char *bf)
 {
 	/*Truncate to file*/
-	int wr2 = 0, read2 = 0, file2 = 0, buff_len, close2 = 0;
+	int wr2 = 0, /*read2 = 0, */file2 = 0, buff_len, close2 = 0;
 
 	file2 = open(f_to, O_APPEND | O_WRONLY, 0600);
 	if (file2 == -1)
