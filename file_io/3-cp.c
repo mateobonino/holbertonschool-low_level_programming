@@ -10,7 +10,7 @@ void read_print(int a, int b, /*char *c, */char *d, char *e);
 */
 int main(int argc, char *argv[])
 {
-	int f_from = 0, f_to = 0, close1 = 0, close2 = 0;
+	int f_from = 0, f_to = 0;
 	char *file_from = argv[1], *file_to = argv[2];
 
 	if (argc != 3)
