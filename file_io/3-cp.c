@@ -10,7 +10,7 @@ void read_print(int a, int b, /*char *c, */char *d, char *e);
 */
 int main(int argc, char *argv[])
 {
-	int f_from = 0, f_to = 0, read_val = 0, write_val = 0, close_val = 0;
+	int f_from = 0, f_to = 0;
 	char *file_from = argv[1], *file_to = argv[2];
 
 	if (argc != 3)
@@ -52,6 +52,7 @@ void read_print(int from, int fto, /*char *buff, */char *file_f, char *file_t)
 		exit(100);
 	}
 	close2_val = close(fto);
+	if (close2_val == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fto);
 		exit(100);
