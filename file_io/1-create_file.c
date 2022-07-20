@@ -13,7 +13,7 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	file_desc = open(filename, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
 	if (file_desc == -1)
-		return (0);
+		return (-1);
 	for (; text_content != NULL && text_content[ret] != '\0'; ret++)
 		;
 	wr = write(file_desc, text_content, ret);
