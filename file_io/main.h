@@ -13,7 +13,7 @@ int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
 void readFunc(char *a, char *b);
 int checkFIle(char *a);
-/*void appendFUnc(char *a, char *b);*/
+void appendFunc(char *a, char *b);
 void truncateFunc(/*char *a, */char *b, char *c);
 
 
