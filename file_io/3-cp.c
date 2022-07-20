@@ -57,18 +57,6 @@ void read_print(int from, int fto, /*char *buff, */char *file_f, char *file_t)
 	write_val = write(fto, buff, read_val);
 	if (write_val == -1)
 		normalError("Error: Can't write to", file_t, 99);
-	close1_val = close(from);
-	if (close1_val == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", from);
-		exit(100);
-	}
-	close2_val = close(fto);
-	if (close2_val == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fto);
-		exit(100);
-	}
 }
 /**
 * normalError - prints an error
