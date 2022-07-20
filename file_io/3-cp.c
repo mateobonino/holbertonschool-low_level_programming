@@ -27,14 +27,12 @@ int main(int argc, char *argv[])
 
 	read_print(f_from, f_to, file_from, file_to);
 
-	close1 = close(f_from);
-	if (close1 == -1)
+	if (close(f_from) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", f_from);
 		exit(100);
 	}
-	close2 = close(f_to);
-	if (close2 == -1)
+	if (close(f_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", f_to);
 		exit(100);
@@ -50,10 +48,10 @@ int main(int argc, char *argv[])
 */
 void read_print(int from, int fto, /*char *buff, */char *file_f, char *file_t)
 {
-	int buffread = 1024, read_val = 0, write_val = 0;
+	int buffread = 1024, write_val = 0;
 	char *buff[1024];
 
-	while (buffread == 1024)
+	do
 	{
 		buffread = read(from, buff, 1024);
 		if (buffread == -1)
@@ -61,7 +59,7 @@ void read_print(int from, int fto, /*char *buff, */char *file_f, char *file_t)
 		write_val = write(fto, buff, read_val);
 		if (write_val == -1)
 			normalError("Error: Can't write to", file_t, 99);
-	}
+	}while (buffread == 1024);
 }
 /**
 * normalError - prints an error
