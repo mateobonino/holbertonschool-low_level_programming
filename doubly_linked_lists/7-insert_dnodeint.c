@@ -46,6 +46,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 size_t list_len(const dlistint_t *h)
 {
 	int count = 0;
+
 	while (h != NULL)
 	{
 		count++;
