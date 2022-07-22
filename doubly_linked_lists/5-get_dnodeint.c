@@ -5,7 +5,7 @@
 * @head: the first item
 * Return: the nth node of the list, or NULL if it failed
 */
-listint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int i = 0;
 
