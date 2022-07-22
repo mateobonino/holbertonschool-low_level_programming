@@ -9,7 +9,7 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *newNode, *temp = *h;
-	unsigned int cnt = 0, len = dlistint_len(*h);
+	unsigned int cnt = 0, len = list_len(*h);
 
 	if (*h == NULL)
 		return (NULL);
@@ -40,4 +40,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	temp->next->prev = newNode;
 	temp->next = newNode;
 	return (newNode);
+}
+/**
+* list_len - gets the length of a list
+* @h: the list
+* Return: the length
+*/
+size_t list_len(const dlistint_t *h)
+{
+	int count = 0;
+	while (h != NULL)
+	{
+		count++;
+		h = h->next;
+	}
+	return (count);
 }
