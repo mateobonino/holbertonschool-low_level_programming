@@ -1,5 +1,4 @@
 #include "lists.h"
-#include "1-dlistint_len.c"
 /**
 * delete_dnodeint_at_index - deletes the node at index of a linked list
 * @head: the first item of the list
@@ -9,8 +8,8 @@
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *temp = *head, *aux;
-	unsigned int count = 0, len = dlistint_len(*head);
-	if (!*head || index - 1 > len)
+	unsigned int count = 0;
+	if (!*head)
 		return (-1);
 	if (!index)
 	{
