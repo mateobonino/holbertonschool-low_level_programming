@@ -21,8 +21,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		valDup = strdup(value);
 		if (!keyDup || !valDup)
 		{
-			free(keyDup);
-			free(valDup);
+			if (keyDup)
+				free(keyDup);
+			if (valDup)
+				free(valDup);
 			free(newNode);
 			return (0);
 		}
