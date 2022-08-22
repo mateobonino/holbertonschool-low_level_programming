@@ -12,7 +12,7 @@ void hash_table_print(const hash_table_t *ht)
 	if (!ht)
 		return;
 	printf("{");
-	node = ht->array[i]
+	node = ht->array[i];
 	while (ht && i < ht->size)
 	{
 		node = ht->array[i];
