@@ -1,4 +1,4 @@
-#include "hash_tables.c"
+#include "hash_tables.h"
 /**
 * hash_table_delete - deletes a hash table
 * @ht: the hash table
@@ -13,7 +13,7 @@ void hash_table_delete(hash_table_t *ht)
 	{
 		if (ht->array[k])
 		{
-			node = ht->array[i];
+			node = ht->array[k];
 			while (node)
 			{
 				temp = node;
