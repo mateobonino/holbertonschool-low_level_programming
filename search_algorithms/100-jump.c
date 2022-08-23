@@ -23,11 +23,11 @@ int jump_search(int *array, size_t size, int value)
 
 	for (i = i - j; array[i] < (int) value && i != size;)
 	{
-		printf("Value checked array [%ld] = [%d]", i, array[i]);
+		printf("Value checked array [%ld] = [%d]\n", i, array[i]);
 		i++;
 		if (array[i] == value)
 		{
-			printf("Value checked array [%ld] = [%d]", i, array[i]);
+			printf("Value checked array [%ld] = [%d]\n", i, array[i]);
 			return (i);
 		}
 	}
